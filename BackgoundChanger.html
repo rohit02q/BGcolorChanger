@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background colour changer</title>
+    <style>
+ *{
+    margin: 0;
+    padding: 0;
+ }
+ body{
+    justify-items: center;
+    }
+.box{
+    margin-top: 50px; 
+    padding: 5px;
+}
+.btns{
+    padding: 5px;
+    margin: 15px;
+}
+#msg{
+    text-align: center;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+   <button class="btns" id="btn1" onclick="White()">White</button>
+   <button class="btns" id="btn2" onclick="Red()">Red</button>
+   <button class="btns" id="btn3" onclick="Yellow()">Yellow</button>
+   <button class="btns" id="btn4" onclick="Blue()">Blue</button>
+   <button class="btns" id="btn5" onclick="RandomColor()">Random</button>
+</div>
+<h1 id="msg"></h1>
+<script>
+    function White(){
+ document.body.style.backgroundColor='White'
+ document.getElementById('msg').innerText='This is white background'
+    }
+function Red(){
+ document.body.style.backgroundColor='Red'
+  document.getElementById('msg').innerText='This is red background'
+}
+function Yellow(){
+ document.body.style.backgroundColor='yellow'
+  document.getElementById('msg').innerText='This is yellow background'
+}
+function Blue(){
+ document.body.style.backgroundColor='blue'
+  document.getElementById('msg').innerText='This is blue background'
+}
+function RandomColor(){
+    let set = [1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+    let a1 = set[Math.floor(Math.random()* set.length)]
+    let a2 = set[Math.floor(Math.random()* set.length)]
+    let a3 = set[Math.floor(Math.random()* set.length)]
+    let a4 = set[Math.floor(Math.random()* set.length)]
+    let a5 = set[Math.floor(Math.random()* set.length)]
+    let a6 = set[Math.floor(Math.random()* set.length)]
+    let RandomColor = '#'+a1+a2+a3+a4+a5+a6
+    
+     document.body.style.backgroundColor=RandomColor
+     document.getElementById('msg').innerText='This is random background'
+     console.log('Random color is ',RandomColor)
+}
+ 
+ </script>
+</body>
+</html>
